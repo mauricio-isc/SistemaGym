@@ -1,6 +1,7 @@
 package com.gym.entity;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 import org.springframework.cglib.core.Local;
 
@@ -10,6 +11,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name= "configuraciones_usuario")
 @Data
+@Builder
 public class ConfiguracionUsuario {
     @Id
     @GeneratedValue(strategy =GenerationType.IDENTITY)
