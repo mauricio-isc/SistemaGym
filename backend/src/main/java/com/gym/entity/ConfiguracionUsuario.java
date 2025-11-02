@@ -2,11 +2,13 @@ package com.gym.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.cglib.core.Local;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name= "configuracion_usuario")
+@Table(name= "configuraciones_usuario")
 @Data
 public class ConfiguracionUsuario {
     @Id
@@ -34,4 +36,15 @@ public class ConfiguracionUsuario {
 
     @Column(name = "fecha_Actualizacion")
     private LocalDateTime fechaActualizacion;
+
+    @PrePersist
+    protected void onCreate(){
+        fechaCreacion = LocalDateTime.now();
+        fechaActualizacion = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    protected void onUpdate(){
+        fechaActualizacion = LocalDateTime.now();
+    }
 }
