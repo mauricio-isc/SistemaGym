@@ -13,7 +13,7 @@ public class perfilDTO {
     private String apellido;
     private String email;
     private LocalDateTime fechaCreacion;
-    private LocalDateTime ultimoAccesso;
+    private LocalDateTime ultimoAcceso;
     private Boolean activo;
     private Boolean bloqueado;
     private Integer intentosFallidos;
